@@ -1,6 +1,7 @@
 import { createStore, compose, applyMiddleware } from "redux";
-import dropDownReducer from "./reducers/reducers";
+import dropDownReducer from "../reducers/reducers";
 import thunk from "redux-thunk";
+
 const middleWare = [];
 
 middleWare.push(thunk);

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import QuestionComponent from "../component/QuestionComponent";
-import QuestionList from "../helpers/constant";
-import { Container } from "react-bootstrap";
+import QuestionList from "../../utils/constant";
 import { connect } from "react-redux";
-import { getDropdownList } from "../redux/actions/actions";
-import "../style/questionblock.css";
+import { getDropdownList } from "../../actions/actions";
+import "../../style/questionblock.css";
 import cloneDeep from "lodash/cloneDeep";
+import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
+import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
 
 class QuestionBlock extends Component {
   state = {
@@ -20,17 +21,19 @@ class QuestionBlock extends Component {
   }
 
   handelRadioClick = e => {
-    const indexData  = e.target.name.split(",");
+    const indexData = e.target.value.split(",");
     let QuestionList = cloneDeep(this.state.QuestionList);
-    QuestionList[indexData[0]].options[indexData[1]].selected = !QuestionList[indexData[0]].options[
-      indexData[1]
-    ].selected;
+    QuestionList[indexData[0]].options[indexData[1]].selected = !QuestionList[
+      indexData[0]
+    ].options[indexData[1]].selected;
     this.setState({
       QuestionList
     });
   };
 
   handelCheckboxClick = e => {
+    console.log(e.target.name);
+
     let QuestionList = cloneDeep(this.state.QuestionList);
     QuestionList[e.target.name].selected = !QuestionList[e.target.name]
       .selected;
@@ -41,7 +44,7 @@ class QuestionBlock extends Component {
 
   render() {
     return (
-      <Container>
+      <div className="container">
         <div className="block">
           <div className="block-1">
             <i className="fa fa-caret-down" />
@@ -61,10 +64,12 @@ class QuestionBlock extends Component {
               handelRadioClick={this.handelRadioClick}
               handelCheckboxClick={this.handelCheckboxClick}
               dropdownData={this.props.dropdownData}
+              icon={<RadioButtonUncheckedIcon fontSize="small" />}
+              checkedIcon={<RadioButtonCheckedIcon fontSize="small" />}
             />
           </div>
         ))}
-      </Container>
+      </div>
     );
   }
 }
