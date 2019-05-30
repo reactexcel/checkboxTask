@@ -18,11 +18,12 @@ class QuestionBlock extends Component {
     });
     this.props.getDropdownList();
   }
+
   handelRadioClick = e => {
-    let x = e.target.name.split(",");
+    const indexData  = e.target.name.split(",");
     let QuestionList = cloneDeep(this.state.QuestionList);
-    QuestionList[x[0]].options[x[1]].selected = !QuestionList[x[0]].options[
-      x[1]
+    QuestionList[indexData[0]].options[indexData[1]].selected = !QuestionList[indexData[0]].options[
+      indexData[1]
     ].selected;
     this.setState({
       QuestionList
