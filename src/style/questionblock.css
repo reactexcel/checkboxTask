@@ -1,0 +1,69 @@
+.container {
+  margin-top: 20px;
+  border: 1px solid #c9ccd0;
+  border-radius: 2px;
+}
+.question {
+  display: flex;
+  border-bottom: 1px solid #c9ccd0;
+  border-top: 1px solid #c9ccd0;
+}
+.setting {
+  padding: 20px;
+}
+.option {
+  padding: 20px;
+}
+.btn-primary {
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn-primary:hover {
+  background-color: transparent;
+  border-color: transparent;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.show > .btn-primary.dropdown-toggle {
+  background-color: white;
+  border-color: #c9ccd0;
+}
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: none;
+}
+.btn-primary:focus {
+  box-shadow: none;
+}
+.fa {
+  color: grey;
+}
+.choice > div {
+  margin: 10px 0;
+  font-size: 14px;
+}
+.border-class {
+  border-right: 1px solid #c9ccd0;
+}
+.style-container {
+  width: calc(100% + 6px);
+  transform: translateX(-3px);
+}
+.dropdown-item {
+  padding: 0.55rem 1.5rem;
+  font-size: 13px;
+}
+.block {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 10px 0px;
+  font-weight: 600;
+  color: grey;
+}
+.fa-caret-down {
+  margin-right: 5px;
+}
+.selected {
+  border: 1px solid #c9ccd0;
+}
