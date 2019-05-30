@@ -10,8 +10,6 @@ const getDropdownSuccess = (state, action) =>
   });
 
 export default handleActions(
-  {
-    ["GET_DROPDOWN_SUCCESS"]: getDropdownSuccess
-  },
+  {["GET_DROPDOWN_SUCCESS"]: getDropdownSuccess},
   initialState
 );
